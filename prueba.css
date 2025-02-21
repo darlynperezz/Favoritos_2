@@ -1,0 +1,563 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    background: white;
+    position: absolute;
+    width: calc(80% - 20px);
+}
+.suggestions-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+.suggestions-list li:hover {
+    background: #eee;
+}
+/* Header */
+.barra-superior {
+    width: 100%;
+    height: 70px;
+    background-color: #3b8dbd;
+    display: flex;
+    align-items: center; /* Distribuye los elementos */
+    padding: 0 20px;  /* Espaciado interno a los lados */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1000;
+    animation: desplegar 1s ease-in-out forwards;
+}
+
+.Diccionario {
+    margin-left: 30px; /* Ajusta según sea necesario */
+}
+
+
+#traductor {
+    background: none;
+    border: none;
+    margin-left: 55rem;
+}
+
+#traductor img {
+    width: 48px;
+    height: 47px;
+}
+
+
+
+
+#Inicio{ 
+    width: 38px;
+    height: 38px;
+    background-image: url(Inicio.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin-left: 7rem;
+}
+
+
+/* Animación de despliegue */
+@keyframes desplegar {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* Para que la animación inicie desde el centro */
+.barra-superior {
+    transform-origin: center;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    height: 85%;
+    margin-top: 55px;
+    background-color: #023e8a;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    right: 35px;
+}
+
+.F{
+    position: relative;
+    top: 5PX;
+}
+
+
+.sidebar img {
+    width: 30px; /* Ajusta el tamaño según necesites */
+    height: auto;
+    margin-right: 10px; /* Espacio entre imagen y texto */
+    vertical-align: middle; /* Alinea con el texto */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+    padding-top: 38px;
+    right: 20px;
+}
+
+.sidebar ul li:hover {
+    background-color: #FFAB5B;
+    border-radius: 15px;
+
+}
+
+/* Menú hamburguesa */
+.hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.hamburger-menu button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Buscador */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.search-bar input {
+    margin-top: 55px;
+    padding: 10px;
+    width: 80%;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: #0077b6;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #005f99;
+}
+
+/* Contenido principal */
+main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.button {
+    margin-top: 55px;
+    padding: 10px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #005f99;
+}
+
+/* Info lateral */
+.info-bar {
+    width: 200px;
+    height: 85%;
+    margin-top: 55px;
+    width: 200px;
+    background-color: #023e8a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#palabras-leidas{
+    position: relative;
+    top: 50px;
+    font-size: 18px;
+    padding: 40px;
+}
+
+#palabras-leidas:hover{
+    background-color: #FFAB5B;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+    padding-top: 38px;
+}
+
+#tiempo-en-pantalla{
+    position: relative;
+    top: 20%;
+    font-size: 18px;
+}
+
+#reloj{
+    font-size: 30px;
+    color: #FFAB5B;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    background: white;
+    position: absolute;
+    width: calc(80% - 20px);
+}
+.suggestions-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+.suggestions-list li:hover {
+    background: #eee;
+}
+/* Header */
+.barra-superior {
+    width: 100%;
+    height: 70px;
+    background-color: #3b8dbd;
+    display: flex;
+    align-items: center; /* Distribuye los elementos */
+    padding: 0 20px;  /* Espaciado interno a los lados */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1000;
+    animation: desplegar 1s ease-in-out forwards;
+}
+
+.Diccionario {
+    margin-left: 30px; /* Ajusta según sea necesario */
+}
+
+
+#traductor {
+    background: none;
+    border: none;
+    margin-left: 60rem;
+}
+
+#traductor img {
+    width: 48px;
+    height: 47px;
+}
+
+
+
+
+#Inicio{ 
+    width: 38px;
+    height: 38px;
+    background-image: url(Inicio.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin-left: 8rem;
+}
+
+
+/* Animación de despliegue */
+@keyframes desplegar {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* Para que la animación inicie desde el centro */
+.barra-superior {
+    transform-origin: center;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icon {
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    height: 85%;
+    margin-top: 55px;
+    background-color: #023e8a;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    right: 35px;
+}
+
+.F{
+    position: relative;
+    top: 5PX;
+}
+
+
+.sidebar img {
+    width: 30px; /* Ajusta el tamaño según necesites */
+    height: auto;
+    margin-right: 10px; /* Espacio entre imagen y texto */
+    vertical-align: middle; /* Alinea con el texto */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+    padding-top: 38px;
+    right: 20px;
+}
+
+.sidebar ul li:hover {
+    background-color: #FFAB5B;
+    border-radius: 15px;
+
+}
+
+/* Menú hamburguesa */
+.hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.hamburger-menu button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Buscador */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.search-bar input {
+    margin-top: 55px;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: #0077b6;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #005f99;
+}
+
+/* Contenido principal */
+main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.button {
+    margin-top: 55px;
+    padding: 10px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #005f99;
+}
+
+/* Info lateral */
+.info-bar {
+    width: 200px;
+    height: 85%;
+    margin-top: 55px;
+    width: 200px;
+    background-color: #023e8a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#palabras-leidas{
+    position: relative;
+    top: 50px;
+    font-size: 18px;
+    padding: 40px;
+}
+
+#palabras-leidas:hover{
+    background-color: #FFAB5B;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 18px;
+    padding-top: 38px;
+}
+
+#tiempo-en-pantalla{
+    position: relative;
+    top: 20%;
+    font-size: 18px;
+}
+
+#reloj{
+    font-size: 30px;
+    color: #FFAB5B;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+.flex-1 {
+    position: relative;
+    top: 40px;
+} 
